@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection">
+    <link rel="stylesheet" href="Style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciador de Matrículas</title>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo">Colégio OSM</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+      </ul>
+    </div>
+  </nav>
+  
+  <div class="container">
+    <div class="card">
+      <div class="card-content">
+        <span class="card-title">Gerenciador de Matrículas</span>
+        <p>Selecione a opção.</p>
+      </div>
+      <div class="card-action">
+        <a href="#!" class="btn blue" onclick="mostrarAdicionarUsuario()">Adicionar Usuário</a>
+        <a href="#!" class="btn green" onclick="mostrarGerenciarCadastro()">Gerenciar Cadastro</a>
+        <a href="#!" class="btn red" onclick="mostrarLixeira()">Lixeira</a>
+      </div>
+    </div>
+  </div>
+
+  <div id="add-user-section" class="container section" style="display: none;">
+    <div class="card">
+      <div class="card-content">
+        <span class="card-title">Adicionar Usuário</span>
+        <form id="add-user-form">
+          <div class="row">
+            <div class="input-field col s12">
+              <input id="first_name" type="text" class="validate" required>
+              <label for="first_name">Nome</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s6">
+              <input id="age" type="number" class="validate" required>
+              <label for="age">Idade</label>
+            </div>
+            <div class="input-field col s6">
+              <input id="course" type="text" class="validate" required>
+              <label for="course">Curso</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s6">
+              <select id="shift" class="browser-default">
+                <option value="" disabled selected>Escolha o turno</option>
+                <option value="Manhã">Manhã</option>
+                <option value="Tarde">Tarde</option>
+                <option value="Noite">Noite</option>
+              </select>
+            </div>
+          </div>
+          <button class="btn" type="button" onclick="mostrarCep()">Próximo</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  
+  <div id="cep-section" class="container section" style="display: none;">
+    <div class="card">
+        <div class="card-content">
+            <span class="card-title">Informe o CEP</span>
+            <form id="cep-form">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="cep" type="text" maxlength="8" class="validate" required>
+                        <label for="cep">CEP</label>
+                    </div>
+                </div>
+                <button class="btn" type="button" onclick="validarCEP()">Validar CEP</button>
+                <button class="btn" type="button" onclick="voltarParaInformacoesUsuario()">Voltar</button>
+            </form>
+        </div>
+        
+        <div id="cep-info" class="card-content" style="display: none;">
+            <div class="section">
+                <div class="card-panel blue-grey lighten-4">
+                    <span class="card-title">Informações do Endereço</span>
+                    <p id="logradouro"></p>
+                    <p id="bairro"></p>
+                    <p id="localidade"></p>
+                    <p id="uf"></p>
+                    <!-- Adicione os campos que estavam faltando -->
+                    <input id="address" type="text" class="validate" placeholder="Logradouro" readonly>
+                    <input id="neighborhood" type="text" class="validate" placeholder="Bairro" readonly>
+                    <input id="city" type="text" class="validate" placeholder="Cidade" readonly>
+                    <input id="state" type="text" class="validate" placeholder="Estado" readonly>
+                    <a href="#!" class="btn blue" id="save-button" style="display: none;" onclick="adicionarUsuario()">Salvar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+        
+        <div id="cep-info" class="card-content" style="display: none;">
+            <div class="section">
+                <div class="card-panel blue-grey lighten-4">
+                    <span class="card-title">Informações do Endereço</span>
+                    <p id="logradouro"></p>
+                    <p id="bairro"></p>
+                    <p id="localidade"></p>
+                    <p id="uf"></p>
+                    <a href="#!" class="btn blue" id="save-button" style="display: none;" onclick="adicionarUsuario()">Salvar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="manage-registration-section" class="container section" style="display: none;">
+  <div class="card">
+      <div class="card-content custom-scrollbar">
+          <span class="card-title">Gerenciar Cadastro</span>
+          <ul id="usuarios" class="collapsible">
+              <!-- Lista de usuários -->
+          </ul>
+          <div class="card-action">
+            <a href="#!" class="btn red" onclick="apagarTodosUsuarios()">Apagar Todos os Usuários</a>
+          </div>
+      </div>
+  </div>
+</div>
+
+<div id="deleted-users-section" class="container section" style="display: none;">
+  <div class="card">
+      <div class="card-content custom-scrollbar">
+          <span class="card-title">Usuários Excluídos</span>
+          <ul id="deleted-users" class="collapsible">
+              <!-- Lista de usuários excluídos -->
+          </ul>
+      </div>
+      <div class="card-action">
+        <a href="#!" class="btn red" onclick="apagarTodosUsuariosExcluidos()">Apagar Todos os Excluídos</a>
+      </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+  <script type="text/javascript" src="js/materialize.min.js"></script>
+  <script src="script.js?v=5"></script>
+</body>
+</html>
