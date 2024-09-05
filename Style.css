@@ -1,0 +1,227 @@
+* {
+    padding: 0;
+    margin: 0;
+    
+    
+}
+
+body {
+    font-family: Arial, sans-serif;
+    font-size: medium;
+    color: black;
+}
+
+.browser-default{
+    border: #555 solid 1px;
+}
+
+.container {
+    max-width: 90%;
+    margin: auto;
+    padding: 20px;
+}
+
+.card {
+    margin: 20px 0;
+}
+
+.toast{
+    user-select: none;
+}
+
+.badge {
+    padding: 0.5em 1em;
+    border-radius: 12px;
+    color: #fff;
+    font-size: 0.8em;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.badge-cadastrado {
+    background-color: #4caf50;
+}
+
+.badge-nao-cadastrado {
+    background-color: #f44336;
+}
+
+
+
+
+.brand-logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    pointer-events: none;
+}
+
+.nav-wrapper form {
+    margin-left: auto;
+}
+
+
+
+.collapsible-header {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #555;
+    cursor: pointer;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.collapsible-body {
+    padding: 15px;
+    border-top: 1px solid #ddd;
+}
+
+.user-icon {
+    font-size: 25px;
+    margin-right: 15px;
+}
+
+.idade, .curso {
+    margin-left: 15px;
+    font-size: 14px;
+    color: #666;
+}
+
+.collapsible-header strong {
+    margin-right: 15px;
+}
+
+.collapsible li.bg {
+    background-color: #f9f9f9;
+}
+
+.collapsible li {
+    margin-bottom: 10px;
+}
+
+.custom-scrollbar {
+    max-height: 300px; 
+    overflow-y: auto; 
+}
+
+.manage-registration-section::-webkit-scrollbar {
+    width: 2px;
+}
+
+.manage-registration-section::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.manage-registration-section::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+.manage-registration-section::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+
+@media (max-width: 600px) {
+    .card-content {
+        padding: 10px;
+    }
+    
+    .card-title {
+        font-size: 1.5rem;
+    }
+    
+    .input-field input,
+    .input-field select {
+        font-size: 0.9rem;
+    }
+    
+    .btn {
+        width: 100%;
+        margin: 5px 0;
+    }
+    
+    .collapsible-header {
+        font-size: 0.9rem;
+    }
+    
+    .collapsible-body {
+        font-size: 0.8rem;
+    }
+    
+    #cep-info {
+        padding: 10px;
+    }
+}
+
+
+@media (min-width: 600px) and (max-width: 1024px) {
+    .container {
+        max-width: 80%;
+    }
+    
+    .card-content {
+        padding: 15px;
+    }
+    
+    .card-title {
+        font-size: 1.75rem;
+    }
+    
+    .input-field input,
+    .input-field select {
+        font-size: 1rem;
+    }
+    
+    .btn {
+        width: auto;
+        margin: 10px 0;
+    }
+    
+    .collapsible-header {
+        font-size: 1rem;
+    }
+    
+    .collapsible-body {
+        font-size: 0.9rem;
+    }
+    
+    #cep-info {
+        padding: 15px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .container {
+        max-width: 70%;
+    }
+    
+    .card-content {
+        padding: 20px;
+    }
+    
+    .card-title {
+        font-size: 2rem;
+    }
+    
+    .input-field input,
+    .input-field select {
+        font-size: 1.1rem;
+    }
+    
+    .btn {
+        margin: 15px 0;
+    }
+    
+    .collapsible-header {
+        font-size: 1.1rem;
+    }
+    
+    .collapsible-body {
+        font-size: 1rem;
+    }
+    
+    #cep-info {
+        padding: 20px;
+    }
+}
